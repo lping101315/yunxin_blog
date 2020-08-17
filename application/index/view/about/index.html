@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html class="no-js bg" lang="zh-cmn-Hans"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--IE 8浏览器的页面渲染方式-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <!--默认使用极速内核：针对国内浏览器产商-->
+    <meta name="renderer" content="webkit">
+    <!--chrome Android 地址栏颜色-->
+    <meta name="theme-color" content="#3a3f51">
+
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+    <title>关于 - {$config.web_site_title}</title>
+
+    <link rel="icon" type="image/ico" href="">
+    <meta name="description" content="{$config.web_site_description}">
+    <meta name="keywords" content="{$config.web_site_keywords}">
+
+    <link rel="stylesheet" type="text/css" href="__HOME_CSS__/GrayMac.css">
+    <!-- 第三方CDN加载CSS -->
+    <link href="__HOME_CSS__/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- 本地css静态资源 -->
+    <link rel="stylesheet" href="__HOME_CSS__/function.min.css" type="text/css">
+    <link rel="stylesheet" href="__HOME_CSS__/handsome.min.css" type="text/css">
+
+
+
+    <!--主题组件css文件加载-->
+    <link rel="stylesheet" href="__HOME_CSS__/jquery.fancybox.min.css" type="text/css">
+    <link rel="stylesheet" href="__HOME_CSS__/newblack.min.css" type="text/css">
+    <link rel="stylesheet" href="__HOME_CSS__/zenburn.min.css" type="text/css">
+
+    <!--引入英文字体文件-->
+    <link rel="stylesheet" href="__HOME_CSS__/font.min.css" type="text/css">
+
+    <style type="text/css">
+
+        html.bg {
+            background: #EFEFEF
+        }
+        .cool-transparent .off-screen+* .app-content-body {
+            background: #EFEFEF
+        }
+        @media (max-width:767px){
+            html.bg {
+                background: #EFEFEF
+            }
+            .cool-transparent .off-screen+* .app-content-body {
+                background: #EFEFEF
+            }
+        }
+        #aside .wrapper:hover {
+            background: url(__HOME_IMG__/snow.gif);
+            background-size: cover;
+            color: #999;
+        }
+    </style>
+
+    <!--全站jquery-->
+    <script src="__HOME_JS__/jquery.min.js"></script>
+
+    <!--网站统计代码-->
+</head>
+
+<body id="body" class="fix-padding">
+
+
+<!-- aside -->
+
+<div id="alllayout" class="app app-aside-fix container app-header-fixed ">  <!-- headnav -->
+    {include file="public/header" /}
+    <!--选择侧边栏的颜色-->
+    {include file="public/aside_left" /}
+    <!-- content -->
+    <div id="content" class="app-content">
+        <!--loading animate-->
+        <div id="loading" class="butterbar active hide">
+            <span class="bar"></span>
+        </div>	<!-- / aside -->
+
+        <!-- <div id="content" class="app-content"> -->
+        <a class="off-screen-toggle hide"></a>
+        <main class="app-content-body ">
+            <div class="hbox hbox-auto-xs hbox-auto-sm">
+                <!--文章-->
+                <div class="col center-part">
+                    <!--标题下的一排功能信息图标：作者/时间/浏览次数/评论数/分类-->
+
+                    <header id="small_widgets" class="bg-light lter wrapper-md">
+                        <h1 class="entry-title m-n font-thin text-black l-h">关于
+                        </h1>
+                    </header>
+                    <div class="wrapper-md" id="post-panel">
+                    <!--正文顶部的部件，如“返回首页”-->
+                    <ol class="breadcrumb bg-white-pure" itemscope=""><li>
+                        <a href="/" itemprop="breadcrumb" title="" data-toggle="tooltip" data-original-title="返回首页"><span class="home-icons"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></span>首页</a>
+                    </li><li class="active">关于&nbsp;&nbsp;</li>
+                        <div style="float:right;">
+                            分享到：
+                            <style>
+                                .breadcrumb i.iconfont.icon-qzone:after {
+                                    padding: 0 0 0 5px;
+                                    color: #ccc;
+                                    content: "/\00a0";
+                                }
+
+                            </style>
+                            <a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://www.glping.net/about.shtml&amp;title=%E5%85%B3%E4%BA%8E%E6%88%91" itemprop="breadcrumb" target="_blank" title="" data-toggle="tooltip" data-original-title="分享到QQ空间" onclick="window.open(this.href, &#39;qzone-share&#39;, &#39;width=550,height=335&#39;);return false;"><i style="font-size:15px;" class="iconfont icon-qzone" aria-hidden="true"></i></a>
+                            <a href="http://service.weibo.com/share/share.php?url=https://www.glping.net/about.html&amp;title=%E5%85%B3%E4%BA%8E%E6%88%91" target="_blank" itemprop="breadcrumb" title="" data-toggle="tooltip" data-original-title="分享到微博" onclick="window.open(this.href, &#39;weibo-share&#39;, &#39;width=550,height=335&#39;);return false;"><i style="font-size:15px;" class="fontello fontello-weibo" aria-hidden="true"></i></a></div></ol>       <!--博客文章样式 begin with .blog-post-->
+                    <div id="postpage" class="blog-post">
+                        <article class="single-post panel">
+                            <!--文章页面的头图-->
+                            <div class="entry-thumbnail" aria-hidden="true"><div class="item-thumb lazy" style="background-image: url({$info.banner|get_file_path})"></div></div>         <!--文章内容-->
+                            <div id="post-content" class="wrapper-lg">
+
+                                {//  关于富文本内容}
+                                {$info.about|raw}
+
+
+                            </div>
+                            <table>
+                                <thead>&nbsp;&nbsp;&nbsp;&nbsp;程序版本：</thead>
+                                <tr><td>版本</td><td>发布时间</td><td>更新内容</td></tr>
+                                {volist name="version" id="vs"}
+                                <tr><td>{$vs.ver_bate}</td><td>{$vs.ver_addtime}</td><td>{$vs.ver_text}</td></tr>
+                                {/volist}
+                            </table>
+
+                        </article>
+
+                    </div>
+                    <!--评论-->
+
+                </div>
+                </div>
+                <!--文章右侧边栏开始-->
+                {include file="public/aside_right" /}
+            </div>
+
+        </main>
+
+    {include file="public/footer" /}
+</div><!--end of .app app-header-fixed-->
+
+
+
+<script type="text/javascript">
+    (function(){
+        var pres = document.querySelectorAll('pre');
+        var lineNumberClassName = 'line-numbers';
+        pres.forEach(function (item, index) {
+            item.className = item.className == '' ? lineNumberClassName : item.className + ' ' + lineNumberClassName;
+        });
+    })();
+</script>
+<script type="text/javascript" src="__HOME_JS__/clipboard.min.js"></script>
+<script type="text/javascript" src="__HOME_JS__/prism.js"></script>
+
+
+
+
+
+<!--CDN加载-->
+<script src="__HOME_JS__/bootstrap.min.js"></script>
+
+
+<script src="__HOME_JS__/jquery.pjax.min.js" type="text/javascript"></script>
+
+
+
+<!--主题组件js加载-->
+
+<!--平滑滚动组件-->
+<script src="__HOME_JS__/SmoothScroll.min.js"></script>
+
+
+<!--pjax动画组件-->
+
+
+<script src="__HOME_JS__/feather.min.js"></script>
+
+
+
+
+<!--lightgallery必备组件-->
+<script src="__HOME_JS__/jquery.fancybox.min.js"></script>
+<script src="__HOME_JS__/easypiechart.min.js"></script>
+
+<!--主题组件js加载结束-->
+
+<!--主题核心js-->
+<script src="__HOME_JS__/function.min.js"></script>
+<script src="__HOME_JS__/core.min.js"></script>
+
+
+
+<script type="text/javascript">
+</script>
+
+
+
+
+<!-- / footer -->
+</body></html>

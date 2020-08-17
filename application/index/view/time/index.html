@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html class="no-js bg" lang="zh-cmn-Hans"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--IE 8浏览器的页面渲染方式-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <!--默认使用极速内核：针对国内浏览器产商-->
+    <meta name="renderer" content="webkit">
+    <!--chrome Android 地址栏颜色-->
+    <meta name="theme-color" content="#3a3f51">
+
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+    <title>关于 - {$config.web_site_title}</title>
+
+    <link rel="icon" type="image/ico" href="">
+    <meta name="description" content="{$config.web_site_description}">
+    <meta name="keywords" content="{$config.web_site_keywords}">
+
+    <link rel="stylesheet" type="text/css" href="__HOME_CSS__/GrayMac.css">
+    <!-- 第三方CDN加载CSS -->
+    <link href="__HOME_CSS__/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- 本地css静态资源 -->
+    <link rel="stylesheet" href="__HOME_CSS__/function.min.css" type="text/css">
+    <link rel="stylesheet" href="__HOME_CSS__/handsome.min.css" type="text/css">
+
+
+    <!--主题组件css文件加载-->
+    <link rel="stylesheet" href="__HOME_CSS__/jquery.fancybox.min.css" type="text/css">
+    <link rel="stylesheet" href="__HOME_CSS__/newblack.min.css" type="text/css">
+    <link rel="stylesheet" href="__HOME_CSS__/zenburn.min.css" type="text/css">
+
+    <!--引入英文字体文件-->
+    <link rel="stylesheet" href="__HOME_CSS__/font.min.css" type="text/css">
+
+    <style type="text/css">
+
+        html.bg {
+            background: #EFEFEF
+        }
+        .cool-transparent .off-screen+* .app-content-body {
+            background: #EFEFEF
+        }
+        @media (max-width:767px){
+            html.bg {
+                background: #EFEFEF
+            }
+            .cool-transparent .off-screen+* .app-content-body {
+                background: #EFEFEF
+            }
+        }
+        #aside .wrapper:hover {
+            background: url(__HOME_IMG__/snow.gif);
+            background-size: cover;
+            color: #999;
+        }
+    </style>
+
+
+    <!--全站jquery-->
+    <script src="__HOME_JS__/jquery.min.js"></script>
+
+    <!--网站统计代码-->
+
+
+</head>
+
+<body id="body" class="fix-padding">
+
+
+
+	<!-- aside -->
+	  
+  <div id="alllayout" class="app app-aside-fix container app-header-fixed ">  <!-- headnav -->
+      {include file="public/header" /}
+  <!-- / headnav -->
+
+  <!--选择侧边栏的颜色-->
+      {include file="public/aside_left" /}
+<!-- content -->
+<div id="content" class="app-content">
+    <!--loading animate-->
+    <div id="loading" class="butterbar active hide">
+            <span class="bar"></span>
+        </div>	<!-- / aside -->
+
+  <!-- content -->
+<!-- <div id="content" class="app-content"> -->
+    <a class="off-screen-toggle hide"></a>
+  	<main class="app-content-body ">
+        <div class="hbox hbox-auto-xs hbox-auto-sm">
+            <div class="col center-part">
+                <div style="background:url(https://s2.ax1x.com/2019/07/20/Zza59I.png) center center; background-size:cover">
+                    <div class="wrapper-lg bg-white-opacity">
+                        <div class="row m-t">
+                            <div class="col-sm-6">
+                                <div class="clear m-b">
+                                    <div class="m-b m-t-sm">
+                                        <span class="h3 text-black">{$author.nick}</span>
+                                        <small class="m-l">{$author.motto}</small>
+                                    </div>
+                                    <p class="m-b">
+<!--                                        <a target="_blank" title="twitter" href="#" class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fontello fontello-twitter"></i></a>-->
+<!--                                        <a target="_blank" title="facebook" href="#" class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fontello fontello-facebook"></i></a>-->
+<!--                                        <a target="_blank" title="googlepluse" href="#" class="btn btn-sm btn-bg btn-rounded btn-default btn-icon"><i class="fontello fontello-google-plus"></i></a>                                    </p>-->
+                                        <a target="_blank" href="#" class="btn btn-sm btn-success btn-rounded">github</a>                                </div>
+                            </div>
+                            <div class="col-sm-6">
+<!--                                <div class="pull-right pull-none-xs text-center">-->
+<!--                                    <a class="m-b-md inline m">-->
+<!--                                        <span class="h3 block font-bold">3</span>-->
+<!--                                        <small>评论</small>-->
+<!--                                    </a>-->
+<!--                                    <a class="m-b-md inline m">-->
+<!--                                        <span class="h3 block font-bold">6</span>-->
+<!--                                        <small>文章</small>-->
+<!--                                    </a>-->
+<!--                                    <a class="m-b-md inline m">-->
+<!--                                        <span class="h3 block font-bold">1</span>-->
+<!--                                        <small>动态</small>-->
+<!--                                    </a>-->
+<!--                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrapper bg-white">
+                    <ul class="nav nav-pills nav-sm" id="time-tabs">
+                        <li class="active"><a href="#talk" role="tab" data-toggle="tab" aria-expanded="true">我的动态</a></li>
+                                            </ul>
+                </div>
+
+                <div class="tab-content">
+                    <div id="talk" class="padder tab-pane  fade in active">
+                        
+<div id="comments" class="timeMachine">
+    <!--如果允许评论，会出现评论框和个人信息的填写-->
+            <!--判断是否登录，只有登陆者才有权利发表说说-->
+                    <!--如果没有登录则什么操作按钮都不会显示-->
+                            <div class="streamline b-l m-l-lg m-b padder-v">
+
+
+
+    <!--自定义评论代码结构-->
+{volist name="list" id="lt"}
+    <div id="comment-2" class="comment-body comment-parent comment-odd comment-by-author">
+
+        <a class="pull-left thumb-sm avatar m-l-n-md">
+            <img nogallery="" src="{$author.avatar}" class="img-40px photo img-square normal-shadow">
+        </a>
+
+        <div class="time-machine m-l-lg panel box-shadow-wrap-normal">
+            <div class="panel-heading pos-rlt b-b b-light">
+                <span class="arrow left"></span>
+                <a href="#" rel="external nofollow">{$author.nick}</a><span class="text-muted m-l-sm pull-right" datetime="{$lt.create_time|time_to_date_frdly}">{$lt.create_time|time_to_date_frdly}</span>
+            </div>
+
+            <div class="panel-body">
+                <p>{$lt.cont}</p>
+            </div>
+
+            <div class="panel-footer">
+                <div class="say_footer">
+                    <a data-coid="2" class="text-muted star_talk"><i class="glyphicon glyphicon-heart-empty"></i>&nbsp;
+                        <span class="star_count">{$lt.good}</span>
+                    </a>
+                    <span class="text-muted">
+                                <span class="ua-icons"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-disc"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="3"></circle></svg>
+                                </span>
+                        发自{$lt.equipment}
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 单条评论者信息及内容 -->
+    </div>
+
+{/volist}
+
+                <!--匹配`自定义评论的代码结构`下面的div标签-->
+       </div>
+        {$list->render()|raw}
+
+    
+</div>
+                    </div><!--end of #pedder-->
+
+                                    </div>
+            </div><!--end of .center-part -->
+            <div class="col w-lg bg-light lter bg-auto">
+                <div class="wrapper">
+                    <div class="padder-md">
+                        <div class="m-b-xs text-md">联系方式</div>
+                        <ul class="list-group no-bg no-borders pull-in">
+                            <li class="list-group-item"><a target="_blank" href="{$ct.email}" class="pull-left thumb-sm avatar m-r"><img src="__HOME_IMG__/ZzU1sO.png" class="img-40px photo img-square normal-shadow"><i class="on b-white bottom"></i></a><div class="clear"><div><a target="_blank" href="{$ct.email}">email</a></div><small class="text-muted">邮箱地址</small></div></li>
+                            <li class="list-group-item"><a target="_blank" href="{$ct.qq}" class="pull-left thumb-sm avatar m-r"><img src="__HOME_IMG__/ZzUlQK.png" class="img-40px photo img-square normal-shadow"><i class="on b-white bottom"></i></a><div class="clear"><div><a target="_blank" href="{$ct.qq}">QQ</a></div><small class="text-muted">QQ号</small></div></li>
+                            <li class="list-group-item"><a target="_blank" href="{$ct.sina}" class="pull-left thumb-sm avatar m-r"><img src="__HOME_IMG__/ZzUMz6.png" class="img-40px photo img-square normal-shadow"><i class="on b-white bottom"></i></a><div class="clear"><div><a target="_blank" href="{$ct.sina}">微博</a></div><small class="text-muted">微博</small></div></li>
+                            <li class="list-group-item"><a target="_blank" href="{$ct.net_easy}" class="pull-left thumb-sm avatar m-r"><img src="__HOME_IMG__/ZzU3LD.png" class="img-40px photo img-square normal-shadow"><i class="on b-white bottom"></i></a><div class="clear"><div><a target="_blank" href="{$ct.net_easy}">网易云音乐</a></div><small class="text-muted">网易云</small></div></li>                        </ul>
+                    </div>
+
+                    <div class="panel box-shadow-wrap-normal">
+                        <h4 class="font-thin padder">关于我</h4>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <p>来自南部的一个小城市，个性不张扬，讨厌随波逐流。</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                                        <div class="padder-md">
+                        <!-- streamline -->
+                        <div class="m-b text-md">那年今日</div>
+                        <div class="streamline b-l m-b">
+                                                    </div>
+                        <!-- / streamline -->
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+	</main>
+
+<script>
+    var timeTemple = '<div class="m-l-n-md">\n' +
+        '          <a class="pull-left thumb-sm avatar">\n' +
+        '            <img src="{IMG_AVATAR}">\n' +
+        '          </a>          \n' +
+        '          <div class="time-machine m-l-xxl panel b-a">\n' +
+        '            <div class="panel-heading pos-rlt">\n' +
+        '              <span class="arrow left pull-up"></span>\n' +
+        '              <span class="text-muted m-l-sm pull-right">\n' +
+        '                {TIME}\n' +
+        '              </span>\n' +
+        '              {CONTENT}</div><div class="text-muted say_footer panel-footer">\n' +
+        '                <a target="_blank" href="{LINK}" class="text-muted m-xs"><i class="iconfont icon-redo"></i>&nbsp;&nbsp;查看全文</a>\n' +
+        '              </div>' +
+        '          </div>' +
+        '        </div>';
+
+    $('#time-tabs').find('a').click(function (e) {
+        var object = $(this);
+        var rss = $(this).data("rss");
+        var id = $(this).data("id");
+        var flag = $(this).attr("data-status");
+        var type = $(this).data("type");
+        var img = $(this).data("img");
+        // console.log(flag);
+        // console.log(rss);
+        if ('undefined' !== rss && 'undefined' !== id && flag === "false"){
+            //动态加载内容
+            $.getFeed({
+                url: rss,
+                success: function(feed){
+                    $.each(feed.items,function(i,item){
+
+                        var date = new Date(Date.parse(item.updated));
+                        Y = date.getFullYear() + '-';
+                        M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+                        D = date.getDate() + ' ';
+                        h = date.getHours() + ':';
+                        m = date.getMinutes();
+                        date=Y+M+D+h+m;
+                        var itemContent="";
+                        if (type!==""){
+                            if (type === "title"){
+                                itemContent = item.title;
+                            }else if (type === "description"){
+                                itemContent = item.description;
+                            }else {
+                                itemContent = item.description;
+                            }
+                        }else {
+                            itemContent = item.description;
+                        }
+                        if (img ===""){
+                            img = "https://imgs.lovpass.cn/img/2020/02/12/8ddec981f84dc20200212.jpeg";
+                        }
+                        if (date === "NaN-NaN-NaN NaN:NaN"){
+                            date = "";
+                        }
+                        var content=timeTemple.
+                        replace("{TIME}",date).
+                        replace("{CONTENT}",itemContent).
+                        replace("{LINK}",item.link).
+                        replace("{IMG_AVATAR}",img);
+
+
+                        $("#"+id).find(".comment-list").append(content);
+                        $("#"+id).find(".streamline").removeClass("hide");
+                        $("#"+id).find(".loading-nav").addClass("hide");
+                        object.attr("data-status","true");
+                        window['Page'].seFancyBox();
+
+                    });
+                },
+                error: function (feed) {
+                    $("#"+id).find(".loading-nav").addClass("hide");
+                    $("#"+id).find(".error-nav").removeClass("hide");
+                }
+            });
+        }
+    });
+    $("#time-upload").bind("click",function () {
+        $("#time_file").trigger("click");
+
+    });
+
+    /*监听文件上传框*/
+    $("#time_file").bind("change",function () {
+        if (!$(this).val()) {
+            $("#file-info").html("没有选择文件");
+            return;
+        }
+
+
+        var input = $('#time_file');
+        // 相当于： $input[0].files, $input.get(0).files
+        var files = input.prop('files');
+        // console.log(files);
+        //判断文件类型
+        if (files[0].type!=="image/jpeg" && files[0].type!=="image/png" && files[0].type!=="image/gif"){
+            $("#file-info").val("错误的文件类型！" + files[0].type);
+            return;
+        }
+        var suffix = "." + files[0].type.slice(6);
+        // console.log(suffix);
+        //开始上传文件
+        var file = files[0];
+        var reader = new FileReader();
+        reader.onload = function(e) {
+            var data = e.target.result;//base64 加密后的图片数据
+            var content = new FormData();
+            content.append("action","upload_img");
+            content.append("file",data);
+            content.append("suffix",suffix);
+
+            $.ajax({
+                url: "?action=upload_img",
+                type: 'post',
+                data: content,
+                cache: false,
+                processData: false,
+                contentType: false,
+                success: function (data) {
+                    data = JSON.parse(data);
+                    $("#time-upload").text("选择文件");
+                    $("#time-upload").attr("disabled",false);
+                    $("input[ name='imageInsertModal']").val(data.data);//插入返回的图片地址
+
+                }, error: function (jqXHR, textStatus, errorThrown) {
+                    $("#time-upload").attr("disabled",false);
+                    $("#time-upload").text("选择文件");
+                    $("#file-info").val($("#file-info").val() + "上传失败" + textStatus);
+                }
+            });
+        };
+
+        // data.append('data', "2333");
+        $("#file-info").val(files[0].name);
+        $("#time-upload").text("正在上传");
+        $("#time-upload").attr("disabled",true);
+        reader.readAsDataURL(file);
+    })
+
+</script>
+
+    <!-- footer -->
+	<script type="text/javascript">
+(function () {
+    window.TypechoComment = {
+        dom : function (id) {
+            return document.getElementById(id);
+        },
+    
+        create : function (tag, attr) {
+            var el = document.createElement(tag);
+        
+            for (var key in attr) {
+                el.setAttribute(key, attr[key]);
+            }
+        
+            return el;
+        },
+
+        reply : function (cid, coid) {
+            var comment = this.dom(cid), parent = comment.parentNode,
+                response = this.dom('respond-page-7'), input = this.dom('comment-parent'),
+                form = 'form' == response.tagName ? response : response.getElementsByTagName('form')[0],
+                textarea = response.getElementsByTagName('textarea')[0];
+
+            if (null == input) {
+                input = this.create('input', {
+                    'type' : 'hidden',
+                    'name' : 'parent',
+                    'id'   : 'comment-parent'
+                });
+
+                form.appendChild(input);
+            }
+
+            input.setAttribute('value', coid);
+
+            if (null == this.dom('comment-form-place-holder')) {
+                var holder = this.create('div', {
+                    'id' : 'comment-form-place-holder'
+                });
+
+                response.parentNode.insertBefore(holder, response);
+            }
+
+            comment.appendChild(response);
+            this.dom('cancel-comment-reply-link').style.display = '';
+
+            if (null != textarea && 'text' == textarea.name) {
+                textarea.focus();
+            }
+
+            return false;
+        },
+
+        cancelReply : function () {
+            var response = this.dom('respond-page-7'),
+            holder = this.dom('comment-form-place-holder'), input = this.dom('comment-parent');
+
+            if (null != input) {
+                input.parentNode.removeChild(input);
+            }
+
+            if (null == holder) {
+                return true;
+            }
+
+            this.dom('cancel-comment-reply-link').style.display = 'none';
+            holder.parentNode.insertBefore(response, holder);
+            return false;
+        }
+    };
+})();
+</script>
+<script type="text/javascript">
+var registCommentEvent = function() {
+    var event = document.addEventListener ? {
+        add: 'addEventListener',
+        focus: 'focus',
+        load: 'DOMContentLoaded'
+    } : {
+        add: 'attachEvent',
+        focus: 'onfocus',
+        load: 'onload'
+    };
+    var r = document.getElementById('respond-page-7');
+        
+    if (null != r) {
+        var forms = r.getElementsByTagName('form');
+        if (forms.length > 0) {
+            var f = forms[0], textarea = f.getElementsByTagName('textarea')[0], added = false;
+
+            if (null != textarea && 'text' == textarea.name) {
+                textarea[event.add](event.focus, function () {
+                    if (!added) {
+                        var input = document.createElement('input');
+                        input.type = 'hidden';
+                        input.name = '_';
+                            input.value = (function () {
+    var _oGg8 = '56c'//'Fct'
++//'Wz'
+'345'+'29'//'K'
++'cbd'//'P'
++/* 'em'//'em' */''+'8'//'QG3'
++//'Qyg'
+'8'+//'QKD'
+'QKD'+//'Cm'
+'Cm'+''///*'LzZ'*/'LzZ'
++//'nP'
+'c80'+//'q8'
+'2e'+''///*'p'*/'p'
++//'B'
+'07'+'3a6'//'9fB'
++//'M'
+'3ef'+'90a'//'J'
++'44'//'W'
++'a'//'e'
+, _uAbj = [[13,16],[13,15]];
+    
+    for (var i = 0; i < _uAbj.length; i ++) {
+        _oGg8 = _oGg8.substring(0, _uAbj[i][0]) + _oGg8.substring(_uAbj[i][1]);
+    }
+
+    return _oGg8;
+})();
+                    
+                        f.appendChild(input);
+                        
+                        input = document.createElement('input');
+                        input.type = 'hidden';
+                        input.name = 'checkReferer';
+                        input.value = 'false';
+                        
+                        f.appendChild(input);
+                        
+
+                        added = true;
+                    }
+                });
+            }
+        }
+    }
+};
+</script></div><!-- /content -->
+      {include file="public/footer" /}
+  </div><!--end of .app app-header-fixed-->
+
+
+<script type="text/javascript">
+	(function(){
+		var pres = document.querySelectorAll('pre');
+		var lineNumberClassName = 'line-numbers';
+		pres.forEach(function (item, index) {
+			item.className = item.className == '' ? lineNumberClassName : item.className + ' ' + lineNumberClassName;
+		});
+	})();
+</script>
+<script type="text/javascript" src="__HOME_JS__/clipboard.min.js"></script>
+<script type="text/javascript" src="__HOME_JS__/prism.js"></script>
+    
+
+
+
+<!--CDN加载-->
+<script src="__HOME_JS__/bootstrap.min.js"></script>
+
+
+    <script src="__HOME_JS__/jquery.pjax.min.js" type="text/javascript"></script>
+
+
+<!--主题组件js加载-->
+
+    <!--平滑滚动组件-->
+    <script src="__HOME_JS__/SmoothScroll.min.js"></script>
+
+
+<!--pjax动画组件-->
+
+
+<script src="__HOME_JS__/feather.min.js"></script>
+
+
+
+
+<!--lightgallery必备组件-->
+<script src="__HOME_JS__/jquery.fancybox.min.js"></script>
+<script src="__HOME_JS__/easypiechart.min.js"></script>
+
+<!--主题组件js加载结束-->
+
+<!--主题核心js-->
+    <script src="__HOME_JS__/function.min.js"></script>
+    <script src="__HOME_JS__/core.min.js"></script>
+
+
+    <script type="text/javascript">
+            </script>
+
+
+
+
+  	<!-- / footer -->
+</body></html>

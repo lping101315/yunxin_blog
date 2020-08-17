@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html class="no-js bg" lang="zh-cmn-Hans"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--IE 8浏览器的页面渲染方式-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <!--默认使用极速内核：针对国内浏览器产商-->
+    <meta name="renderer" content="webkit">
+    <!--chrome Android 地址栏颜色-->
+    <meta name="theme-color" content="#3a3f51">
+
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+    <title>首页 - {$config.web_site_title}</title>
+
+    <link rel="icon" type="image/ico" href="">
+    <meta name="description" content="{$config.web_site_description}">
+    <meta name="keywords" content="{$config.web_site_keywords}">
+
+    <link rel="stylesheet" type="text/css" href="__HOME_CSS__/GrayMac.css">
+    <!-- 第三方CDN加载CSS -->
+    <link href="__HOME_CSS__/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- 本地css静态资源 -->
+    <link rel="stylesheet" href="__HOME_CSS__/function.min.css" type="text/css">
+    <link rel="stylesheet" href="__HOME_CSS__/handsome.min.css" type="text/css">
+
+
+
+    <!--主题组件css文件加载-->
+    <link rel="stylesheet" href="__HOME_CSS__/jquery.fancybox.min.css" type="text/css">
+    <link rel="stylesheet" href="__HOME_CSS__/newblack.min.css" type="text/css">
+    <link rel="stylesheet" href="__HOME_CSS__/zenburn.min.css" type="text/css">
+
+    <!--引入英文字体文件-->
+    <link rel="stylesheet" href="__HOME_CSS__/font.min.css" type="text/css">
+
+    <style type="text/css">
+
+        html.bg {
+            background: #EFEFEF
+        }
+        .cool-transparent .off-screen+* .app-content-body {
+            background: #EFEFEF
+        }
+        @media (max-width:767px){
+            html.bg {
+                background: #EFEFEF
+            }
+            .cool-transparent .off-screen+* .app-content-body {
+                background: #EFEFEF
+            }
+        }
+        #aside .wrapper:hover {
+            background: url(__HOME_IMG__/snow.gif);
+            background-size: cover;
+            color: #999;
+        }
+    </style>
+
+    <!--全站jquery-->
+    <script src="__HOME_JS__/jquery.min.js"></script>
+
+    <!--网站统计代码-->
+
+</head>
+
+<body id="body" class="fix-padding">
+
+
+<!-- aside -->
+
+<div id="alllayout" class="app app-aside-fix container app-header-fixed ">  <!-- headnav -->
+
+    {include file="public/header" /}
+    <!--选择侧边栏的颜色-->
+    {include file="public/aside_left" /}
+    <!-- content -->
+    <div id="content" class="app-content">
+        <!--loading animate-->
+        <div id="loading" class="butterbar active hide">
+            <span class="bar"></span>
+        </div>  <!-- / aside -->
+
+        <!-- <div id="content" class="app-content"> -->
+        <a class="off-screen-toggle hide"></a>
+        <main class="app-content-body ">
+            <div class="hbox hbox-auto-xs hbox-auto-sm">
+                <div class="col center-part">
+                    <!--公告位置-->
+                    <div class="alert alert-warning alert-block" style="
+              margin-bottom: 0px;">
+                        <button type="button" class="close" data-dismiss="alert">×</button><p><i class="fontello fontello-volume-up" aria-hidden="true"></i>&nbsp;
+                        {$config.web_site_tips}</p>
+                    </div>
+                    <!--/公告位置-->
+
+                    <header class="bg-light lter wrapper-md">
+                                  <h1 class="m-n font-thin text-black l-h">{$cate_name}</h1>
+                                  <small class="text-muted letterspacing indexWords">学海无涯。</small>
+                    </header>
+
+
+                    <div class="wrapper-md" id="post-panel">
+
+                        <!--首页输出文章-->
+
+                        {volist = name="article" id="at"}
+
+                        <div class="blog-post">
+                            <div class="single-post panel">
+                                <div class="index-post-img">
+                                    <a href="{:url('Article/detail', ['id' => $at.art_id])}">
+                                        <div class="item-thumb lazy" style="background-image: url({$at.art_img|get_file_path})">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="post-meta wrapper-lg">
+                                    <h2 class="m-t-none text-ellipsis index-post-title text-title">
+                                        <a href="{:url('Article/detail', ['id' => $at.art_id])}">{if condition="$at.art_original eq 1"}[ 原创 ] {else  /}[ 转载 ]{/if} {$at.art_title}</a>
+                                    </h2>
+                                    <p class="summary l-h-2x text-muted">{$at.art_remark}</p>
+                                    <div class="line line-lg b-b b-light"></div>
+                                    <div class="text-muted post-item-foot-icon text-ellipsis list-inline">
+                                        <li>
+                                            <span class="m-r-sm right-small-icons"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></span>
+                                            {$at.art_author}
+                                        </li>
+
+
+                                        <li>
+                                            <span class="right-small-icons m-r-sm"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
+                                            {$at.create_time|date='Y-m-d'}
+                                        </li>
+
+                                        <li>
+                                            <span class="right-small-icons m-r-sm"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span>
+                                            <a href="#">{if condition="$at.com_nums gt 0"}{$at.com_nums}{else /}暂无评论{/if}</a>
+                                        </li>
+                                        <li>
+                                            <i class="glyphicon glyphicon-heart-empty"></i> {$at.art_hit}
+                                        </li>
+                                    </div><!--text-muted-->
+                                </div><!--post-meta wrapper-lg-->
+                            </div><!--panel/panel-small-->
+
+                        </div>
+                        {/volist}        <!--分页首页按钮-->
+                        <nav class="text-center m-t-lg m-b-lg" role="navigation">
+                            {$article->render()|raw}                        </nav>
+                        <style>
+                            .page-navigator>li>a, .page-navigator>li>span{
+                                line-height: 1.42857143;
+                                padding: 6px 12px;
+                            }
+                        </style>
+                    </div>
+                </div>
+                <!--首页右侧栏-->
+                {include file="public/aside_right" /}
+
+            </div>
+        </main>
+        <!-- footer -->
+    </div><!-- /content -->
+    {include file="public/footer" /}
+</div><!--end of .app app-header-fixed-->
+
+
+<script type="text/javascript" src="__HOME_JS__/clipboard.min.js"></script>
+<script type="text/javascript" src="__HOME_JS__/prism.js"></script>
+
+<script src="__HOME_JS__/bootstrap.min.js"></script>
+
+
+<script src="__HOME_JS__/jquery.pjax.min.js" type="text/javascript"></script>
+
+
+
+<!--主题组件js加载-->
+
+<!--平滑滚动组件-->
+<script src="__HOME_JS__/SmoothScroll.min.js"></script>
+
+
+<!--pjax动画组件-->
+
+
+<script src="__HOME_JS__/feather.min.js"></script>
+
+
+
+
+<!--lightgallery必备组件-->
+<script src="__HOME_JS__/jquery.fancybox.min.js"></script>
+<script src="__HOME_JS__/easypiechart.min.js"></script>
+
+<!--主题组件js加载结束-->
+
+<!--主题核心js-->
+<script src="__HOME_JS__/function.min.js"></script>
+<script src="__HOME_JS__/core.min.js"></script>
+
+
+
+<script type="text/javascript">
+</script>
+
+
+
+
+<!-- / footer -->
+
+
+
+</body></html>

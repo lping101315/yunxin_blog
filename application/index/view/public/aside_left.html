@@ -1,0 +1,163 @@
+<aside id="aside" class="app-aside hidden-xs bg-white">  <!--<aside>-->
+    <div class="aside-wrap" layout="column">
+        <div class="navi-wrap scroll-y scroll-hide" flex="">
+            <!-- user -->
+            <div class="clearfix hidden-xs text-center hide  show" id="aside-user">
+                <div class="dropdown wrapper vertical-wrapper">
+                    <div ui-nav="">
+                        <a href="/">
+                            <span class="thumb-lg w-auto-folded avatar m-t-sm  vertical-avatar">
+                  <img src="{$author.avatar}" class="img-full img-circle normal-shadow">
+                </span>
+                        </a>
+                    </div>
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle hidden-folded  vertical-flex">
+                <span class="clear">
+                  <span class="block m-t-sm">
+                    <strong class="font-bold text-lt">{$author.nick}</strong>
+                    <b class="caret"></b>
+                  </span>
+                  <span class="text-muted text-xs block">{$author.motto}</span>
+                </span>
+                    </a>
+                    <!-- dropdown -->
+                    <ul class="dropdown-menu animated fadeInRight w hidden-folded no-padder">
+                        <li class="wrapper b-b m-b-sm bg-info m-n">
+                            <span class="arrow top hidden-folded arrow-info"></span>
+                            <div>
+                                <p>{$author.tips}</p>
+                            </div>
+                            <div class="progress progress-xs m-b-none dker">
+                                <div class="progress-bar bg-white" data-toggle="tooltip" data-original-title="时间已经度过66.67%" style="width: 66.67%"></div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- / dropdown -->
+                </div>
+            </div>
+            <!-- / user -->
+
+            <!-- nav -->
+            <nav ui-nav="" class="navi clearfix">
+                <ul class="nav">
+                    <!--index-->
+                    <div class="line dk hidden-folded"></div>
+                    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+                        <span>导航</span>
+                    </li>
+                    <!--主页-->
+                    <li>
+                        <a href="/" class="auto">
+                            <span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></span>
+                            <span>首页</span>
+                        </a>
+                    </li>
+                    <!-- /主页 -->
+                    <li>
+                        <a target="_self" href="{:url('about/index')}" class="auto">
+                            <span class="nav-icon"><i class="fontello-emo-sunglasses"></i></span>
+                            <span>关于</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a target="_self" href="{:url('Time/index')}" class="auto">
+                            <span class="nav-icon"><i class="fontello-instagram"></i></span><span>时光</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a target="_self" href="{:url('Links/index')}" class="auto">
+                            <span class="nav-icon"><i class="fontello-user"></i></span>
+                            <span>朋友</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_self" href="{:url('Comment/index')}" class="auto">
+                            <span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span>
+                            <span>留言</span>
+                        </a>
+                    </li>
+
+                    <li class="line dk"></li>
+
+                    <!--Components-->
+                    <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+                        <span>组成</span>
+                    </li>
+                    <!--分类category-->
+                    <li>
+                        <a class="auto">
+                  <span class="pull-right text-muted">
+                    <i class="fontello icon-fw fontello-angle-right text"></i>
+                    <i class="fontello icon-fw fontello-angle-down text-active"></i>
+                  </span>
+                            <!--                  <i class="glyphicon glyphicon-th"></i>-->
+                            <span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg></span>
+
+                            <span>分类</span>
+                        </a>
+                        <ul class="nav nav-sub dk">
+                            <li class="nav-sub-header">
+                                <a>
+                                    <span>分类</span>
+                                </a>
+                            </li>
+                            <!--循环输出分类-->
+                            {volist  name="menu" id="m"}
+                                <li><a href="{:url('Article/index', ['id' => $m.menu_id])}"><span>{$m.menu_name}</span></a></li>
+                            {/volist}
+                        </ul>
+                    </li>
+                    <!--友情链接-->
+                    <li>
+                        <a class="auto">
+                  <span class="pull-right text-muted">
+                    <i class="fontello icon-fw fontello-angle-right text"></i>
+                    <i class="fontello icon-fw fontello-angle-down text-active"></i>
+                  </span>
+                            <span class="nav-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></span>
+                            <span>友链</span>
+                        </a>
+                        <ul class="nav nav-sub dk">
+                            <li class="nav-sub-header">
+                                <a data-no-instant="">
+                                    <span>友链</span>
+                                </a>
+                            </li>
+                            <!--使用links插件，输出全站友链-->
+                            {volist name="link" id="lk"}
+                                <li data-original-title="{$lk.link_name}" data-toggle="tooltip" data-placement="top"><a href="{$lk.link_url}" target="_blank"><span>{$lk.link_name}</span></a></li>
+                            {/volist}
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <!-- nav -->
+        </div>
+        <!--end of .navi-wrap-->
+        <!--left_footer-->
+        <div id="left_footer" class="footer wrapper-xs text-center nav-xs lt">
+
+<!--            <div class="col-xs-4 no-padder">-->
+<!--                <a target="_blank" class="tinav" href="#" title="" data-toggle="tooltip" data-placement="top" data-original-title="后台管理">-->
+<!--                    <span class="left-bottom-icons block"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></span>-->
+<!--                    <small class="text-muted">管理</small>-->
+<!--                </a>-->
+<!--            </div>-->
+            <div class="col-xs-4 no-padder">
+                <a target="_blank" class="tinav" href="{:url('Feed/feed',['type' => 'article'])}" title="" data-toggle="tooltip" data-placement="top" data-original-title="文章RSS地址">
+                    <span class="left-bottom-icons block"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></span>
+                    <small class="text-muted">文章</small>
+                </a>
+            </div>
+            <div class="col-xs-4 no-padder">
+                <a target="_blank" href="{:url('Feed/feed',['type' => 'comment'])}" title="" data-toggle="tooltip" data-placement="top" data-original-title="评论RSS地址">
+                    <span class="left-bottom-icons block"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></span>
+                    <small class="text-muted">留言</small>
+                </a>
+            </div>
+        </div>
+
+    </div><!--.aside-wrap-->
+</aside>

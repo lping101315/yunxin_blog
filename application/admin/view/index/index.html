@@ -1,0 +1,25 @@
+{extend name="layout" /}
+
+{block name="page-header"}{/block}
+
+{block name="content"}
+
+    {// 后台首页钩子}
+    <div class="row">
+        {:hook('admin_index')}
+    </div>
+{/block}
+
+{block name="script"}
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: '{:url("checkUpdate")}',
+            type: 'GET'
+        }).done(function(data) {
+            $('#product-auth').html(data.auth);
+            $('#product-update').html($('#product-update').text() + ' ' + data.update);
+        });
+    });
+</script>
+{/block}

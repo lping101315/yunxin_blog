@@ -1,0 +1,84 @@
+.activitybox{width: 100%; position: relative; background: url(../img/banner_bg.png) no-repeat top center; background-size: 100% auto; padding-top: 0.41rem}
+
+.activity_show{width: 100%; overflow: hidden; padding-bottom: 1rem}
+.activity_show ul li{width: 75%; margin: auto; background: none; overflow: hidden; position: relative; background: #fff}
+.activity_show555 ul li img.im1{display: block; width:9.75rem; height: 11.25rem; margin: auto}
+.activity_show ul li img.im1{display: block; width:100%}
+
+.activity_show ul li img.im2{position: absolute;top:0; left: 0.3rem; width: 1.4rem}
+.activity_show ul li p.p1{padding: 0 0.2rem; transform: translateY(-50%)}
+.activity_show ul li p.p1 span{background: #000; color:#fff; line-height: 0.7rem; padding:0 0.1rem; font-size: 0.36rem; display: inline-block}
+.activity_show ul li p.p2{padding: 0 0.2rem; transform: translateY(-20%)}
+.activity_show ul li p.p2 span{background: #000; color:#fff; line-height: 0.7rem; padding:0 0.1rem; font-size: 0.36rem; display: inline-block}
+.activity_show ul li p.p3{color:#6D6E72; font-size: 0.3rem; padding: 0 0.2rem; padding-bottom: 0.25rem;font-weight: bold}
+.activity_show ul li.delc{background: #fff; height: auto; padding-bottom:0.32rem }
+.activity_show ul li.delc p.p5{font-weight: bold;color:#181818; font-size: 0.34rem; line-height: 1.1rem; padding-left: 0.8rem; position: relative; background: #f7f7f7; opacity: 1}
+.activity_show ul li.delc p.p5:after{content: ''; width: 1px; background: #181818; position: absolute; left: 0.35rem; top:0; height: 100%; }
+.activity_show ul li.delc p.p1 span{background: #BFA56F; padding: 0 0.2rem}
+.activity_show ul li.delc p.p5:before{background: #181818; width: 5px;  height:5px; position: absolute; left: 0.31rem; top:50%; content: ''; margin-top: -2px}
+.activity_show ul li.delc p.p3{color:#181818}
+.activity_show ul li.delc p.p6{background: url(../img/icontime.png) no-repeat 0.2rem center; background-size: 0.3rem; padding-left: 0.6rem; font-size: 0.26rem}
+.activity_show ul li.delc p.p7{background: url(../img/icon_map.png) no-repeat 0.2rem center; background-size: 0.3rem; padding-left: 0.6rem; font-size: 0.26rem; margin-top: 0.15rem}
+/*.activity_show ul li.swiper-slide-active p.p5:after{height:100%; top:0; transition: all 0.5s; transition-delay: 0.5s}*/
+/*.activity_show ul li.swiper-slide-active p.p5:before{transition: all 0.5s; transition-delay: 1s;transform: scale(1);}*/
+/*.activity_show ul li.swiper-slide-active p.p5.spagination span{opacity: 1; transition: all 0.5s;transition-delay: 0.5s}*/
+
+.activity_show2 .swiper-slide-next{transform: scale(1) !important}
+
+.spagination{position: absolute; width: 100%; left:0; bottom: 0.3rem;text-align: center;}
+.spagination span{width: 0.1rem; height: 0.1rem; background: #D8D8D8; margin-right: 0.1rem; border-radius: 0}
+.spagination span.swiper-pagination-bullet-active{background: #101010;}
+.recommend{border-left: 0.08rem solid #BFA56F}
+.rightimg img{display: block; width: 100%}
+.left_calendar{width: 1.8rem; text-align: center}
+.calendarsjow{padding-top: 0.55rem}
+.calendarsjow ul li{position: relative}
+.calendarsjow ul li.set_1{color:#181818; font-size: 0.22rem; position: relative;transform: translateY(0.5rem);font-weight: bold}
+/*.calendarsjow ul li.set_1:after{content:'';width: 3px; height:4px; border-radius: 4px; position: absolute;left: 50%; top:50%; transform: translate(-0%,-50%); background: #181818}*/
+.calendarsjow ul li.set_2{color: #BFA56F; font-size: 1.2rem;margin-top: -0.15rem;}
+.calendarsjow ul li.set_2 span{border-bottom: 2px solid #181818;font-weight: bold}
+.calendarsjow ul li.set_3{color:#181818; font-size: 0.28rem; padding-top: 0.2rem;font-weight: bold}
+.calendarsjow ul li.set_4{color:#181818; font-size: 0.2rem; padding-top: 0.1rem}
+.bt_img img{display: block; width: 100%; margin-top: 0.36rem}
+.calendarlist{padding: 0.3rem; background: #fff}
+.calendarlist ul li.text{color: #181818; font-size: 0.3rem; line-height: 0.48rem;font-weight: bold;}
+.calendarlist ul li.href a{display: block; width: 1.76rem; height: 0.6rem; line-height: 0.6rem; text-align: center; color:#fff; background: #BFA56F url(../img/right.png) no-repeat 95% center;font-size: 0.3rem; transform: translateX(0.3rem); background-size: 0.3rem; padding-right: 0.2rem}
+.leftimg img{height:0.98rem; display: block}
+.index_title{padding: 0.6rem 0 0.4rem 0}
+.right img{display: block; height: 0.74rem; margin-top: 0.2rem; margin-right: 0.2rem}
+.publ ul li{background: #fff; padding: 0; width: 48%; margin: 0 1%; margin-bottom: 0.1rem}
+
+.publ ul li span.s1{padding: 0.2rem; color:#181818; font-size: 0.26rem; display: block; font-weight: 600}
+.publ ul li span.s2{display: block; color:#181818; font-size: 0.26rem; padding-left: 0.5rem; background: url(../img/icontime.png) no-repeat 0.2rem center; background-size: 0.3rem; }
+.publ ul li span.s3{display: block; color:#181818; font-size: 0.26rem; padding: 0rem 0 0rem 0.5rem; margin-top:0.1rem; margin-bottom:0.4rem;background: url(../img/icon_map.png) no-repeat 0.2rem center; background-size: 0.3rem; }
+.Tbas{height: 1rem; background: #fff; overflow: hidden}
+.Tbas ul li{width: 33.3%; text-align: center;font-weight: bold; float: left; line-height: 1rem;  color:#181818; font-size: 0.3rem; position: relative}
+.Tbas ul li.on{color:#BFA56F}
+.Tbas ul li.on:after{content: ''; width: 0.3rem; height: 2px; background: #BFA56F; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%)}
+.delc{width: 100% !important; background: #fff}
+.centntbox{margin-top: 0.2rem}
+.centntbox{padding: 0.2rem; background: #fff; color:#666; font-size: 0.26rem;}
+.centntbox img{max-width: 100%; height: auto}
+.centrtbox{text-align: center; padding: 0.4rem 0;margin: 1rem;margin-top: 1.2rem}
+.centrtbox img{height: 0.5rem}
+.Tbasx ul li{width: 25%;    font-weight: bold}
+.listbox{background: white}
+.listbox ul li:first-child{padding-top: 0.4rem}
+.listbox ul li{padding: 0.2rem 0;  border-top: 1px solid #EEEEEE; background:#fff;}
+.listbox ul li img{width: 2rem; height: 2rem; margin-right: 0.4rem}
+.listbox ul li p{position: relative; height: 2rem; padding-right: 0.2rem}
+.listbox ul li p span.x1{color:#181818; font-size: 0.3rem;font-weight: bold}
+.listbox ul li p span.x2{color:#181818; font-size: 0.24rem; position: absolute; bottom: 0.5rem; background: url(../img/icontime.png) no-repeat left center; background-size: 0.3rem; padding-left: 0.4rem}
+.listbox ul li p span.x3{color:#181818; font-size: 0.24rem; position: absolute; bottom: 0.1rem;background: url(../img/icon_map.png) no-repeat left center; background-size: 0.3rem; padding-left: 0.4rem}
+
+.index_bottmn{
+    position: fixed; right: 0.2rem; top: 70%;color:#fff; text-align: center; z-index: 999; border-radius: 2px;
+   
+}
+.index_bottmn img{
+	width: 0.9rem;
+	    display: block;
+	    margin: auto;
+	    margin-top: 0.1rem;
+}
+.index_bottmn a{color:#fff}

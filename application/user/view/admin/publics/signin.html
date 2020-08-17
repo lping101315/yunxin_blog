@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!--[if IE 9]>         <html class="ie9 no-focus" lang="zh"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-focus" lang="zh"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+
+        <title>后台管理</title>
+
+        <meta name="description" content="">
+        <meta name="author" content="caiweiming">
+        <meta name="robots" content="noindex, nofollow">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0">
+
+
+        <!-- Stylesheets -->
+
+        <!-- Page JS Plugins CSS -->
+        <link rel="stylesheet" href="__LIBS__/sweetalert/sweetalert.min.css">
+
+        <!-- Bootstrap and OneUI CSS framework -->
+        <link rel="stylesheet" href="__ADMIN_CSS__/bootstrap.min.css">
+        <link rel="stylesheet" id="css-main" href="__ADMIN_CSS__/oneui.css">
+        <link rel="stylesheet" href="__ADMIN_CSS__/yxin.css">
+
+        <!-- END Stylesheets -->
+    </head>
+    <body>
+        <!-- Login Content -->
+        <div class="bg-white pulldown">
+            <div class="content content-boxed overflow-hidden">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+                        <div class="push-30-t push-50 animated fadeIn">
+                            <!-- Login Title -->
+                            <div class="text-center" >
+                                <img src="{$Think.config.web_site_logo|get_file_path}" alt="" style="width: 150px">
+                                <p class="text-muted push-15-t">后台管理</p>
+                            </div>
+                            <!-- END Login Title -->
+
+                            <!-- Login Form -->
+                            <form class="js-validation-login form-horizontal push-30-t signin-form" name="signin-form" action="{:url('signin')}" method="post">
+                                <div class="form-group">
+                                    <label class="col-xs-12" for="login-username">用户名</label>
+                                    <div class="col-xs-12">
+                                        <input class="form-control" type="text" id="login-username" name="username" placeholder="请输入您的用户名">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-xs-12" for="login-password">密码</label>
+                                    <div class="col-xs-12">
+                                        <input class="form-control" type="password" id="login-password" name="password" placeholder="请输入您的密码">
+                                    </div>
+                                </div>
+                                {notempty name="Think.config.captcha_signin"}
+                                <div class="form-group">
+                                    <label class="col-xs-12" for="login-password">验证码</label>
+                                    <div class="col-xs-7">
+                                        <input class="form-control" type="text" name="captcha" placeholder="请输入验证码">
+                                    </div>
+                                    <div class="col-xs-5">
+                                        <img src="{:captcha_src()}" class="pull-right" id="captcha" style="cursor: pointer;" onclick="this.src='{:captcha_src()}?d='+Math.random();" title="点击刷新" alt="captcha" />
+                                    </div>
+                                </div>
+                                {/notempty}
+                                {// 登录框钩子}
+                                {:hook('signin_captcha')}
+                                <div class="form-group">
+                                    <div class="col-xs-6">
+                                        <label class="css-input switch switch-sm switch-primary">
+                                            <input type="checkbox" id="login-remember-me" name="remember-me"><span></span> 7天内自动登录?
+                                        </label>
+                                    </div>
+
+                                </div>
+                                <div class="form-group push-30-t">
+                                    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+                                        <button class="btn btn-block btn-primary" type="submit">登 录</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- END Login Form -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END Login Content -->
+
+        <!-- Login Footer -->
+        <div class="pulldown push-30-t text-center animated fadeInUp">
+        </div>
+        <!-- END Login Footer -->
+
+        <!-- OneUI Core JS: jQuery, Bootstrap, slimScroll, scrollLock, Appear, CountTo, Placeholder, Cookie and App.js -->
+        <script src="__ADMIN_JS__/core/jquery.min.js"></script>
+        <script src="__ADMIN_JS__/core/bootstrap.min.js"></script>
+        <script src="__ADMIN_JS__/core/jquery.slimscroll.min.js"></script>
+        <script src="__ADMIN_JS__/core/jquery.scrollLock.min.js"></script>
+        <script src="__ADMIN_JS__/core/jquery.appear.min.js"></script>
+        <script src="__ADMIN_JS__/core/jquery.countTo.min.js"></script>
+        <script src="__ADMIN_JS__/core/jquery.placeholder.min.js"></script>
+        <script src="__ADMIN_JS__/core/js.cookie.min.js"></script>
+        <script src="__ADMIN_JS__/app.js"></script>
+
+        <!-- Page JS Plugins -->
+        <script src="__LIBS__/jquery-validation/jquery.validate.min.js"></script>
+        <script src="__LIBS__/bootstrap-notify/bootstrap-notify.min.js"></script>
+        <script src="__LIBS__/sweetalert/sweetalert.min.js"></script>
+
+        <!-- Page JS Code -->
+        <script src="__ADMIN_JS__/yxin.js"></script>
+        {:hook('signin_footer')}
+        <script>
+            $(document).ready(function () {
+                $('.signin-form').on('submit', function () {
+                    var $data = $(this).serialize();
+
+                    Yxin.loading();
+                    $.post($(this).attr('action'), $data, function (res) {
+                        Yxin.loading('hide');
+                        if (res.code) {
+                            Yxin.notify('登录成功，页面即将跳转~', 'success');
+                            setTimeout(function () {
+                                location.href = res.url;
+                            }, 1500);
+                        } else {
+                            $('#captcha').click();
+                            Yxin.notify(res.msg, 'danger');
+                        }
+                    }).fail(function () {
+                        Yxin.loading('hide');
+                        Yxin.notify('服务器错误~', 'danger');
+                    });
+                    return false;
+                });
+            });
+        </script>
+    </body>
+</html>

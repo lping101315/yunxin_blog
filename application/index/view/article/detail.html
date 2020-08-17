@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html class="no-js bg" lang="zh-cmn-Hans"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!--IE 8浏览器的页面渲染方式-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <!--默认使用极速内核：针对国内浏览器产商-->
+    <meta name="renderer" content="webkit">
+    <!--chrome Android 地址栏颜色-->
+    <meta name="theme-color" content="#3a3f51">
+
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+
+    <title>{$info.art_title} - {$config.web_site_title}</title>
+
+    <link rel="icon" type="image/ico" href="">
+    <meta name="description" content="{$info.art_remark}">
+    <meta name="keywords" content="{$config.web_site_title},{$info.art_keyword}">
+
+    <link rel="stylesheet" type="text/css" href="__HOME_CSS__/GrayMac.css">
+    <!-- 第三方CDN加载CSS -->
+    <link href="__HOME_CSS__/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- 本地css静态资源 -->
+    <link rel="stylesheet" href="__HOME_CSS__/function.min.css" type="text/css">
+    <link rel="stylesheet" href="__HOME_CSS__/handsome.min.css" type="text/css">
+
+
+    <!--主题组件css文件加载-->
+    <link rel="stylesheet" href="__HOME_CSS__/jquery.fancybox.min.css" type="text/css">
+    <link rel="stylesheet" href="__HOME_CSS__/newblack.min.css" type="text/css">
+    <link rel="stylesheet" href="__HOME_CSS__/zenburn.min.css" type="text/css">
+
+    <!--引入英文字体文件-->
+    <link rel="stylesheet" href="__HOME_CSS__/font.min.css" type="text/css">
+
+    <style type="text/css">
+
+        html.bg {
+            background: #EFEFEF
+        }
+        .cool-transparent .off-screen+* .app-content-body {
+            background: #EFEFEF
+        }
+        @media (max-width:767px){
+            html.bg {
+                background: #EFEFEF
+            }
+            .cool-transparent .off-screen+* .app-content-body {
+                background: #EFEFEF
+            }
+        }
+        #aside .wrapper:hover {
+            background: url(__HOME_IMG__/snow.gif);
+            background-size: cover;
+            color: #999;
+        }
+    </style>
+    <!--全站jquery-->
+    <script src="__HOME_JS__/jquery.min.js"></script>
+
+    <!--网站统计代码-->
+
+
+</head>
+
+<body id="body" class="fix-padding">
+
+
+	<!-- aside -->
+	  
+  <div id="alllayout" class="app app-aside-fix container app-header-fixed ">  <!-- headnav -->
+      {include file="public/header" /}
+  <!-- / headnav -->
+
+  <!--选择侧边栏的颜色-->
+      {include file="public/aside_left" /}
+<!-- content -->
+<div id="content" class="app-content">
+    <!--loading animate-->
+    <div id="loading" class="butterbar active hide">
+            <span class="bar"></span>
+        </div>	<!-- / aside -->
+<style>
+    #post-content{
+        font-size: 14px;
+    }
+</style>
+<!-- <div id="content" class="app-content"> -->
+   <a class="off-screen-toggle hide"></a>
+   <main class="app-content-body ">
+    <div class="hbox hbox-auto-xs hbox-auto-sm">
+    <!--文章-->
+     <div class="col center-part">
+         <!--生成分享图片必须的HTML结构-->
+             <!--标题下的一排功能信息图标：作者/时间/浏览次数/评论数/分类-->
+      
+        <header id="small_widgets" class="bg-light lter wrapper-md">
+             <h1 class="entry-title m-n font-thin text-black l-h">{$info.art_title}</h1>
+                  <ul class="entry-meta text-muted list-inline m-b-none small
+             post-head-icon">
+             <!--作者-->
+             <li class="meta-author">
+                 <span class="post-icons"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></span><span class="sr-only">博主：</span> <a class=#" rel="author"> {$info.art_author}</a>
+             </li>
+             <!--发布时间-->
+             <li class="meta-date"><span class="post-icons"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-clock"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span><span class="sr-only">发布时间：</span><time class="meta-value">{$info.create_time|date='Y 年 m月 d日 H:i:s'}</time></li>
+             <!--浏览数-->
+             <li class="meta-views"><span class="post-icons"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-eye"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></span><span class="meta-value">{$info.art_hit}次浏览</span></li>
+                              <!--评论数-->
+                 <li class="meta-comments"><span class="post-icons"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></span><a class="meta-value" href="#">{if $com_nums == 0}暂无评论{else /}{$com_nums}评论{/if}</a></li>
+
+             <!--分类-->
+             <li class="meta-categories"><span class="post-icons"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-hash"><line x1="4" y1="9" x2="20" y2="9"></line><line x1="4" y1="15" x2="20" y2="15"></line><line x1="10" y1="3" x2="8" y2="21"></line><line x1="16" y1="3" x2="14" y2="21"></line></svg></span><span class="sr-only">分类：</span> <span class="meta-value"><a href="#">{$info.art_pid}</a></span></li>
+         </ul>
+      </header>
+      <div class="wrapper-md" id="post-panel">
+	   <ol class="breadcrumb bg-white-pure" itemscope=""><li>
+                 <a href="/" itemprop="breadcrumb" title="" data-toggle="tooltip" data-original-title="返回首页"><span class="home-icons"><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></span>首页</a>
+             </li><li class="active">正文&nbsp;&nbsp;</li>
+              <div style="float:right;">
+   分享到：
+   <style>
+   .breadcrumb i.iconfont.icon-qzone:after {
+    padding: 0 0 0 5px;
+    color: #ccc;
+    content: "/\00a0";
+    }
+    
+   </style>
+   <a href="#" itemprop="breadcrumb" target="_blank" title="" data-toggle="tooltip" data-original-title="分享到QQ空间" onclick="window.open(this.href, &#39;qzone-share&#39;, &#39;width=550,height=335&#39;);return false;"><i style="font-size:15px;" class="iconfont icon-qzone" aria-hidden="true"></i></a>
+   <a href="#" target="_blank" itemprop="breadcrumb" title="" data-toggle="tooltip" data-original-title="分享到微博" onclick="window.open(this.href, &#39;weibo-share&#39;, &#39;width=550,height=335&#39;);return false;"><i style="font-size:15px;" class="fontello fontello-weibo" aria-hidden="true"></i></a></div></ol>       <!--博客文章样式 begin with .blog-post-->
+       <div id="postpage" class="blog-post">
+        <article class="single-post panel">
+        <!--文章页面的头图-->
+         <div id="post-content" class="wrapper-lg">
+          <div class="entry-content l-h-2x">
+            {$info.art_content|raw}
+          </div>
+                          <!--文章的页脚部件：打赏和其他信息的输出-->
+             
+             <div class="show-foot">
+                 <div class="notebook">
+                     <i class="fontello fontello-clock-o"></i>
+                     <span>最后修改：{$info.create_time|date='Y 年 m月 d日 H:i:s'}</span><br /><br />
+                     <span>{if $info.art_original eq 1}
+                     文章声明：非特殊说明，本文版权归 {$config.web_site_title} 所有，转载请注明出处
+                     {else}
+                     文章声明：本文系转载或收集整理于互联网，如有侵权请邮件告知本站删除。
+                     {/if}</span>
+                     <br />
+                     <span>本文标题：<span style="color: #428bca">{$info.art_title}</span><span><br />
+                         <span>本文标签：<span style="color: #428bca">{$info.art_keyword}</span><span><br />
+                 </div>
+
+             </div>
+                                      <!--打赏模块-->
+                 
+             <div class="support-author">
+                 <button data-toggle="modal" data-target="#myModal" class="btn btn-pay btn-danger btn-rounded"><i class="fontello fontello-wallet" aria-hidden="true"></i>&nbsp;赞赏</button>
+                 <div class="mt20 text-center article__reward-info">
+                     <span class="mr10">如果觉得本篇文章对你有用，请随意赞赏;赞赏将用于服务器、域名开支</span>
+                 </div>
+             </div>
+             <div id="myModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                 <div class="modal-dialog modal-sm" role="document">
+                     <div class="modal-content">
+                         <div class="modal-header">
+                             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                             <h4 class="modal-title">赞赏</h4>
+                         </div>
+                         <div class="modal-body">
+                             <p class="text-center article__reward"> <strong class="article__reward-text">扫一扫支付</strong> </p>
+                             <div class="tab-content">
+                                 <img nogallery="" aria-labelledby="alipay-tab" class="pay-img tab-pane fade in active" id="alipay_author" role="tabpanel" src="{$config.web_site_ali_qr|get_file_path}">
+                                 <img nogallery="" aria-labelledby="wechatpay-tab" class="pay-img tab-pane fade" id="wechatpay_author" role="tabpanel" src="{$config.web_site_wx_qr	|get_file_path}"></div>
+                             <div class="article__reward-border mb20 mt10"></div>
+
+                             <div class="text-center" role="tablist"><div class="pay-button" role="presentation"><button href="#alipay_author" id="alipay-tab" aria-controls="alipay_author" role="tab" data-toggle="tab" class="btn m-b-xs m-r-xs btn-info"><i class="iconfont icon-alipay" aria-hidden="true"></i><span>&nbsp;支付宝支付</span></button>
+                                 </div><div class="pay-button" role="presentation"><button href="#wechatpay_author" id="wechatpay-tab" aria-controls="wechatpay_author" role="tab" data-toggle="tab" class="btn m-b-xs btn-success"><i class="iconfont icon-wechatpay" aria-hidden="true"></i><span>&nbsp;微信支付</span></button>
+                                 </div></div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+                                  <!--/文章的页脚部件：打赏和其他信息的输出-->
+         </div>
+        </article>
+       </div>
+       <!--上一篇&下一篇-->
+       <nav class="m-t-lg m-b-lg">
+        <ul class="pager">
+        {if $next}
+        <li class="next">
+            <a class="box-shadow-wrap-normal" href="{:url('Article/detail', ['id' => $next.art_id])}" title="" data-toggle="tooltip" data-original-title="{$next.art_title}">
+            下一篇 </a></li>
+        {/if}
+        {if $pre}
+        <li class="previous">
+            <a class="box-shadow-wrap-normal" href="{:url('Article/detail', ['id' => $pre.art_id])}" title="" data-toggle="tooltip" data-original-title="{$pre.art_title}">
+            上一篇 </a></li>
+        {/if}
+        </ul>
+       </nav>
+       <!--评论-->
+        
+            <style>
+            textarea#comment{
+                background-image: url('https://s2.ax1x.com/2019/07/20/ZzaGcV.png');
+                background-color: #ffffff;
+                transition: all 0.25s ease-in-out 0s;
+            }
+            textarea#comment:focus {
+                background-position-y: 105px;
+                transition: all 0.25s ease-in-out 0s;
+            }
+        </style>
+
+
+    <div id="comments">
+
+                    <!--评论列表-->
+        <ol class="comment-list">
+            <!--自定义评论代码结构-->
+
+            {volist name="comments" id='ct'}
+            <li id="comment-8" class="comment-body comment-parent comment-odd">
+                <div id="div-comment-8" class="comment-body">
+                    <a class="pull-left thumb-sm" rel="nofollow">
+                        <img nogallery="" src="{$ct.com_user.avatar}" class="img-40px photo img-square normal-shadow">
+                    </a>
+                    <div class="m-b m-l-xxl">
+                    <div class="comment-meta">
+                        <span class="comment-author vcard"><b class="fn">{$ct.com_user.nick}</b></span>
+                        <div class="comment-metadata">
+                            <time class="format_time text-muted text-xs block m-t-xs" pubdate="pubdate" datetime="2020-03-21T21:21:01+08:00">{$ct.create_time|time_to_date_frdly}</time>
+                        </div>
+                    </div>
+                        <!--回复内容-->
+                        <div class="comment-content m-t-sm">
+                            <span class="comment-content-true">
+                                <p>{$ct.com_content}</p>
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+            </li>
+            {/volist}
+        </ol>
+
+
+        <div id="respond-post-22" class="respond comment-respond no-borders">
+
+                <h4 id="reply-title" class="comment-reply-title m-t-lg m-b">
+                    发表评论
+                    <small>
+                        <i class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="" data-original-title="使用cookie技术保留您的个人信息以便您下次快速评论，继续评论表示您已同意该条款"></i>
+                    </small>
+
+                </h4>
+
+            <form id="comment_form" method="post" action="#" class="comment-form" role="form">
+                <div class="comment-form-comment form-group">
+                    <label class="padder-v-sm" for="comment">评论<span class="required text-danger">*</span></label>
+                    <textarea id="comment" class="textarea form-control OwO-textarea" name="content" rows="5" placeholder="说点什么吧……" onkeydown=""></textarea>
+                    <div class="OwO padder-v-sm">
+                        <div class="OwO-body" style="width: 100%">
+                            <div class="OwO-title"><span>OwO</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="author_info" class="row row-sm">
+                    <!--                                    <div class="comment-form-author form-group col-sm-6 col-md-4">-->
+                    <!--                                        <label for="author">名称<span class="required text-danger">*</span></label>-->
+                    <!--                                        <div>-->
+                    <!--                                            <input id="author" class="form-control" name="author" type="text" value="" maxlength="245" placeholder="姓名或昵称">-->
+                    <!--                                        </div>-->
+                    <!--                                    </div>-->
+
+                    <div class="comment-form-email form-group col-sm-6 col-md-4">
+                        <label for="email">邮箱<span class="required text-danger">*</span>
+                        </label>
+                        <input type="text" name="email" id="mail" class="form-control" placeholder="邮箱 (必填,将保密)" value="">
+                    </div>
+
+                    <div class="comment-form-url form-group col-sm-12 col-md-4">
+                        <label for="url">地址</label>
+                        <input id="url" class="form-control" name="url" type="url" value="" maxlength="200" placeholder="网站或博客">
+                    </div>
+                </div>
+                <!--提交按钮-->
+                <div class="form-group">
+                    <button type="button" name="" id="submit" class="submit btn-rounded box-shadow-wrap-lg btn-gd-primary padder-lg">
+                        <span id="form-sbt-commet">发表评论</span>
+                        <span class="text-active do-sbt-text">提交中...</span>
+                    </button>
+                    <i class="animate-spin fontello fontello-spinner hide" id="spin"></i>
+                    <input type="hidden" name="artid" value="{$info.art_id}">
+                </div>
+            </form>
+            </div>
+
+        </div>
+
+
+      </div>
+     </div>
+     <!--文章右侧边栏开始-->
+        {include file="public/aside_right" /}
+       <!--文章右侧边栏结束-->
+    </div>
+   </main>
+
+<!-- footer -->
+
+    {include file="public/footer" /}
+  </div><!--end of .app app-header-fixed-->
+
+<script type="text/javascript" src="__HOME_JS__/clipboard.min.js"></script>
+<script type="text/javascript" src="__HOME_JS__/prism.js"></script>
+      <script type="text/javascript" src="__HOME_JS__/common.js"></script>
+      <script type="text/javascript" src="__HOME_JS__/comment.js"></script>
+
+
+<!--CDN加载-->
+<script src="__HOME_JS__/bootstrap.min.js"></script>
+
+
+    <script src="__HOME_JS__/jquery.pjax.min.js" type="text/javascript"></script>
+
+
+<!--主题组件js加载-->
+
+    <!--平滑滚动组件-->
+    <script src="__HOME_JS__/SmoothScroll.min.js"></script>
+
+
+<!--pjax动画组件-->
+
+
+<script src="__HOME_JS__/feather.min.js"></script>
+
+
+
+
+<!--lightgallery必备组件-->
+<script src="__HOME_JS__/jquery.fancybox.min.js"></script>
+<script src="__HOME_JS__/easypiechart.min.js"></script>
+
+
+
+
+
+<!--主题组件js加载结束-->
+
+<!--主题核心js-->
+    <script src="__HOME_JS__/function.min.js"></script>
+    <script src="__HOME_JS__/core.min.js"></script>
+
+
+  	<!-- / footer -->
+</body></html>
